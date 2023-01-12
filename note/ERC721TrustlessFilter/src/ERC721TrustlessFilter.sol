@@ -7,4 +7,11 @@ import "@openzeppelin/contracts/token/ERC721/ERC721.sol";
 
 abstract contract ERC721TrustlessFilter is Ownable, ERC721 {
     using BitMaps for BitMaps.BitMap;
+
+    struct VoteInfo {
+        BitMaps.BitMap allowVotes;
+        BitMaps.BitMap blockVotes;
+        uint256 allowTotal;
+        uint256 blockTotal;
+    }
 }
