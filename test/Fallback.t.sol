@@ -19,7 +19,8 @@ contract FallbackTest is Test {
         address instance = _ethernaut.createLevelInstance(_fallbackFactory);
         _fallback = Fallback(payable(instance));
         _;
-        _ethernaut.submitLevelInstance(payable(instance));
+        bool passed = _ethernaut.submitLevelInstance(payable(instance));
+        assertTrue(passed);
         vm.stopPrank();
     }
 
