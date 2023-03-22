@@ -26,7 +26,7 @@ forge test
 | [2. Fallout](src/Fallout) ✅           |
 | [3. CoinFlip](src/CoinFlip) ✅         |
 | [4. Telephone](src/Telephone) ✅       |
-| [5. Token](src/Token)                  |
+| [5. Token](src/Token) ✅               |
 | [6. Delegation](src/Delegation)        |
 | [7. Force](src/Force)                  |
 | [8. Vault](src/Vault)                  |
