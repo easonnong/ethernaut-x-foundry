@@ -35,8 +35,8 @@ contract TelephoneTest is Test {
     }
 
     function testTelephoneHack() public testWrapper {
-        console2.log("_telephone owner before:", _telephone.owner());
+        // console2.log("_telephone owner before:", _telephone.owner());
         _telephone.changeOwner(_hacker);
-        console2.log("_telephone owner after:", _telephone.owner());
+        // console2.log("_telephone owner after:", _telephone.owner());
     }
 }
