@@ -29,7 +29,7 @@ forge test
 | [5. Token](src/Token) ✅               |
 | [6. Delegation](src/Delegation)✅      |
 | [7. Force](src/Force)✅                |
-| [8. Vault](src/Vault)                  |
+| [8. Vault](src/Vault) ✅                  |
 | [9. King](src/King)                    |
 | [10. Re-Entrancy](src/Reentrance)      |
 | [11. Elevator](src/Elevator)           |
