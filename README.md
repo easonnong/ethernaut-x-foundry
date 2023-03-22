@@ -28,7 +28,7 @@ forge test
 | [4. Telephone](src/Telephone) ✅       |
 | [5. Token](src/Token) ✅               |
 | [6. Delegation](src/Delegation)✅      |
-| [7. Force](src/Force)                  |
+| [7. Force](src/Force)✅                |
 | [8. Vault](src/Vault)                  |
 | [9. King](src/King)                    |
 | [10. Re-Entrancy](src/Reentrance)      |
