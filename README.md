@@ -32,7 +32,7 @@ forge test
 | [8. Vault](src/Vault) ✅                  |
 | [9. King](src/King) ✅                   |
 | [10. Re-Entrancy](src/Reentrance) ✅     |
-| [11. Elevator](src/Elevator)           |
+| [11. Elevator](src/Elevator) ✅          |
 | [12. Privacy](src/Privacy)  ✅           |
 | [13. GatekeeperOne](src/GatekeeperOne) |
 | [14. GatekeeperTwo](src/GatekeeperTwo) |
