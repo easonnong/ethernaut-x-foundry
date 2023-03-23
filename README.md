@@ -35,7 +35,7 @@ forge test
 | [11. Elevator](src/Elevator) ✅          |
 | [12. Privacy](src/Privacy)  ✅           |
 | [13. GatekeeperOne](src/GatekeeperOne)✅ |
-| [14. GatekeeperTwo](src/GatekeeperTwo) |
+| [14. GatekeeperTwo](src/GatekeeperTwo)✅ |
 | [15. NaughtCoin](src/NaughtCoin)       |
 | [16. Preservation](src/Preservation)   |
 | [17. Recovery](src/Recovery)           |
