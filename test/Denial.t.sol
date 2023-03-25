@@ -54,6 +54,8 @@ contract DenialHack {
     }
 
     receive() external payable {
-        require(false, "DenialHack failed");
+        assembly {
+            invalid() // All the remaining gas in this context is consumed.
+        }
     }
 }
