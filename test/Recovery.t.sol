@@ -49,8 +49,7 @@ contract RecoveryTest is Test {
                 )
             )
         );
-        console2.log(address(_recovery));
-        console2.log(target);
+
         (bool success, ) = target.call(
             abi.encodeWithSignature("destroy(address)", _hacker)
         );
