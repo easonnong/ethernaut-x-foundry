@@ -40,7 +40,7 @@ forge test
 | [16. Preservation](src/Preservation) ✅  |
 | [17. Recovery](src/Recovery)  ✅         |
 | [18. Magic Number](src/MagicNum) ✅        |
-| [19. AlienCodex](src/AlienCodex)       |
+| [19. AlienCodex](src/AlienCodex)✅       |
 | [20. Denial](src/Denial)               |
 | [21. Shop](src/Shop)                   |
 | [22. Dex](src/Dex)                     |
