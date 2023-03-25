@@ -6,7 +6,7 @@ import "../src/AlienCodex/AlienCodex.sol";
 contract AlienCodexHack {
     address public target;
 
-    constructor(address _target) {
+    constructor(address _target) public {
         target = _target;
     }
 
@@ -31,7 +31,7 @@ contract AlienCodexHack {
          */
 
         uint256 h = uint256(keccak256(abi.encode(uint256(1))));
-        uint256 i = 2**256 - 1;
+        uint256 i = 2 ** 256 - 1;
         // unchecked {
         //     // h + i = 0 = 2**256
         //     i -= h;
