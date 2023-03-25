@@ -42,7 +42,7 @@ forge test
 | [18. Magic Number](src/MagicNum) ✅        |
 | [19. AlienCodex](src/AlienCodex)✅       |
 | [20. Denial](src/Denial) ✅              |
-| [21. Shop](src/Shop)                   |
+| [21. Shop](src/Shop) ✅                  |
 | [22. Dex](src/Dex)                     |
 | [23. Dex Two](src/DexTwo)              |
 | [24. PuzzleWallet](src/PuzzleWallet)   |
