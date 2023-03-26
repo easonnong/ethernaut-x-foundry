@@ -43,7 +43,7 @@ forge test
 | [19. AlienCodex](src/AlienCodex)✅       |
 | [20. Denial](src/Denial) ✅              |
 | [21. Shop](src/Shop) ✅                  |
-| [22. Dex](src/Dex)                     |
+| [22. Dex](src/Dex) ✅                    |
 | [23. Dex Two](src/DexTwo)              |
 | [24. PuzzleWallet](src/PuzzleWallet)   |
 | [25. Motorbike](src/Motorbike)         |
