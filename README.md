@@ -46,4 +46,4 @@ forge test
 | [22. Dex](src/Dex) ✅                    |
 | [23. Dex Two](src/DexTwo) ✅             |
 | [24. PuzzleWallet](src/PuzzleWallet)✅   |
-| [25. Motorbike](src/Motorbike)         |
+| [25. Motorbike](src/Motorbike)✅         |
